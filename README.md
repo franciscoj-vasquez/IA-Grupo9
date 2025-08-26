@@ -1,4 +1,4 @@
-# 🤖 Repositorio de Trabajos Prácticos - IA Grupo 9
+# 🤖 Repositorio de Trabajos Prácticos - IA Grupo 2
 
 Este repositorio contiene el desarrollo de los trabajos prácticos para la materia de Inteligencia Artificial. El objetivo es aplicar diferentes técnicas y modelos sobre tres tipos de datasets: **tabular**, **secuencial** y de **imágenes**.
 

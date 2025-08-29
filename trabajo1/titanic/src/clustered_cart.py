@@ -7,6 +7,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.utils.validation import check_is_fitted
 
 class ClusteredCART(BaseEstimator, ClassifierMixin):
+
     """
     Mixture duro: K clusters con KMeans + 1 CART por clúster.
     Compatible con GridSearchCV (expone hiperparámetros del árbol).
@@ -21,6 +22,7 @@ class ClusteredCART(BaseEstimator, ClassifierMixin):
         min_samples_leaf=5,
         min_samples_split=10,
         ccp_alpha=0.0,
+        class_weight=None
     ):
         self.n_clusters = n_clusters
         self.random_state = random_state
@@ -29,6 +31,7 @@ class ClusteredCART(BaseEstimator, ClassifierMixin):
         self.min_samples_leaf = min_samples_leaf
         self.min_samples_split = min_samples_split
         self.ccp_alpha = ccp_alpha
+        self.class_weight = class_weight
 
     def _new_tree(self):
         return DecisionTreeClassifier(
@@ -38,6 +41,7 @@ class ClusteredCART(BaseEstimator, ClassifierMixin):
             min_samples_leaf=self.min_samples_leaf,
             min_samples_split=self.min_samples_split,
             ccp_alpha=self.ccp_alpha,
+            class_weight=self.class_weight
         )
 
     def fit(self, X, y):

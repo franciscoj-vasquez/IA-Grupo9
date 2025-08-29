@@ -34,10 +34,10 @@ def main():
 
     # 4) Grid de hiperparámetros (K + árbol)
     param_grid = {
-        "clf__n_clusters": [2, 3],
+        "clf__n_clusters": [2,3,4],
         "clf__criterion": ["gini", "entropy"],
-        "clf__max_depth": [5, 7, 9],
-        "clf__min_samples_leaf": [2, 3, 4, 5],
+        "clf__max_depth": [5, 7, 9, 11],
+        "clf__min_samples_leaf": [2, 3, 4],
         "clf__min_samples_split": [6, 10, 15],
         "clf__ccp_alpha": [0.001, 0.002, 0.004, 0.006, 0.008, 0.01, 0.012],
         "clf__class_weight": ["balanced"]

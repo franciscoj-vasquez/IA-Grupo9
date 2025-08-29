@@ -13,9 +13,11 @@ def load_titanic(url: str = TITANIC_URL):
     df = pd.read_csv(url)
     y = df["Survived"].astype(int)
     X = df.drop(columns=["Survived", "Ticket", "Name", "PassengerId", "Cabin"])
-    # (Opcional) Si querés usar Has_Cabin, crealo antes de dropear Cabin en vez de eliminarlo.
 
-    # Tipos
+    print("--- Vista Previa del DataFrame X Procesado ---")
+    print(X.head())  # .head() muestra las primeras 5 filas
+    print("\n--- Información y Tipos de Datos de X ---")
+    print(X.info())  # .info() te muestra las columnas, si hay nulos y el tipo de dato
     num_cols = X.select_dtypes(include=["int64", "float64"]).columns.tolist()
     cat_cols = X.select_dtypes(include=["object"]).columns.tolist()
     return X, y, num_cols, cat_cols
